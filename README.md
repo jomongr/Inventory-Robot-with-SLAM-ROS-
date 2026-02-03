@@ -1,44 +1,36 @@
 # 📦 Inventory-Bot: Autonomous Warehouse Navigator
 
-![ROS](https://img.shields.io/badge/ROS-Noetic/Melodic-blue?style=for-the-badge&logo=ros)
-![Python](https://img.shields.io/badge/Python-3.7+-yellow?style=for-the-badge&logo=python)
+![ROS](https://img.shields.io/badge/ROS-Noetic-blue?style=for-the-badge&logo=ros)
+![Python](https://img.shields.io/badge/Python-3.x-yellow?style=for-the-badge&logo=python)
 ![Gazebo](https://img.shields.io/badge/Simulation-Gazebo-orange?style=for-the-badge)
 
-Inventory-Bot is an autonomous mobile robotics platform designed for smart warehousing. Leveraging **SLAM**, **Sensor Fusion**, and a **custom URDF**, this bot navigates complex environments and utilizes a Python-controlled adjustable tray to deliver items to specific vertical heights.
+## 📌 Overview
+An autonomous mobile robot designed for warehouse automation. It features **SLAM-based navigation**, obstacle avoidance, and a **Python-controlled prismatic tray** to deliver inventory to specific vertical heights.
 
----
 
-## 🚀 Key Features
-- **Autonomous Navigation:** Full integration with the ROS Navigation Stack for global and local path planning.
-- **Dynamic SLAM:** Real-time mapping and localization using LiDAR and RGB camera data.
-- **Vertical Actuation:** A custom-designed prismatic tray system for tiered shelf delivery.
-- **Precision Perception:** Extended Kalman Filter (EKF) for fused, low-noise odometry.
-- **Simulation-Ready:** Pre-configured Gazebo environments and RViz visualizations for testing.
 
----
+## 🛠️ Key Technologies
+* **SLAM:** GMapping/Cartographer for real-time occupancy grid mapping.
+* **Sensor Fusion:** Extended Kalman Filter (EKF) via `robot_localization` package.
+* **Actuation:** Prismatic joint URDF with Python-based position control.
+* **Navigation:** ROS Navigation Stack (MoveBase) for global and local path planning.
 
-## 🛠️ System Architecture
-
-### 🛰️ Perception & Navigation
-- **LiDAR:** 360° environment scanning for obstacle avoidance.
-- **EKF Node:** Fuses IMU, wheel odometry, and LiDAR data for stable localization.
-- **SLAM:** Uses GMapping/Cartographer to generate high-resolution occupancy grids.
-
-### 🏗️ Hardware Design (URDF)
-- **Base:** Differential drive mobile platform.
-- **Tray Actuator:** Python-driven prismatic joint for Z-axis movement.
-- **Sensors:** Integrated LiDAR and RGB Camera with realistic noise models.
-
----
+## 📂 Project Structure
+* `/urdf`: Robot model with LiDAR, Camera, and Tray joints.
+* `/scripts`: Python nodes for navigation and tray control.
+* `/launch`: Files to initialize Gazebo, RViz, and EKF nodes.
 
 ## 🎮 Usage
+1. **Launch Environment:**
+   `roslaunch inventory_bot warehouse.launch`
+2. **Set Initial Pose:**
+   `python3 set_initial_pose.py`
+3. **Move to Target:**
+   `python3 move_bot.py <x> <y>`
+4. **Actuate Tray:**
+   `python3 move_tray.py <height_in_meters>`
 
-### 1. Set Initial Pose
-Align the robot's localization with its Gazebo coordinates:
-```bash
-python set_initial_pose.py
 
-2. Autonomous NavigationSend the robot to a specific $(x, y)$ coordinate in the map:
 
-python move_bot.py <x_position> <y_position>
-
+---
+**Author:** Jomon George Reji | MSc Mechatronics & Cyber Physical Systems
