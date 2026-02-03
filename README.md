@@ -8,7 +8,7 @@
 An autonomous mobile robot designed for warehouse automation. It features **SLAM-based navigation**, obstacle avoidance, and a **Python-controlled prismatic tray** to deliver inventory to specific vertical heights.
 
 ## 🎥 Project Demo
-[![Inventory Bot SLAM Demo](https://drive.google.com/file/d/11QKCsPK_mKKrY4fJN3Wbk9Ln9lMOYbXr/view?usp=sharing)
+[![Inventory Bot SLAM Demo] (https://drive.google.com/file/d/11QKCsPK_mKKrY4fJN3Wbk9Ln9lMOYbXr/view?usp=sharing)
 
 
 
