@@ -37,3 +37,8 @@ Inventory-Bot is an autonomous mobile robotics platform designed for smart wareh
 Align the robot's localization with its Gazebo coordinates:
 ```bash
 python set_initial_pose.py
+
+2. Autonomous NavigationSend the robot to a specific $(x, y)$ coordinate in the map:
+
+python move_bot.py <x_position> <y_position>
+
